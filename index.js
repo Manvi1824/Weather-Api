@@ -39,7 +39,16 @@ function updateWeather(data){
     details.textContent = data.details;
     humidity.textContent = `${data.humidity}%`;
     visibility.textContent = `${data.visibility / 1000} km`;
-    icon.src = `https://openweathermap.org/img/wn/${data.icon}@4x.png`;
+    
+    // Log the icon to debug
+    console.log("Weather icon code:", data.icon);
+    
+    // Handle sun (01d) and cloud (02d/03d etc.) cases specifically
+    if (data.icon === "01d" || data.icon === "01n") {
+        icon.src = "https://img.icons8.com/emoji/96/sun-emoji.png"; // Replace with a visible sun
+    } else {
+        icon.src = `https://openweathermap.org/img/wn/${data.icon}@4x.png`;
+    }
 }
 getData(defaultCity, apiKey).then((data) => {
     updateWeather(data);
@@ -54,8 +63,8 @@ button.addEventListener("click",()=>{
         temp.textContent = `${data.temp}°C`;
         area.textContent = data.city;
         details.textContent = data.details;
-        humidity.textContent = `${data.humidity}%`;
-        visibility.textContent = `${data.visibility / 1000} km`;
+        humidity.textContent = `Humidity: ${data.humidity}%`;
+        visibility.textContent = ` Visibility: ${data.visibility / 1000} km`;
         icon.src = `https://openweathermap.org/img/wn/${data.icon}@4x.png`;
     
     }).catch((err)=>{

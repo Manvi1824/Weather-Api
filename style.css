@@ -39,38 +39,105 @@ body {
 .search{
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 2px solid #5D6D7E;
     margin: 20px;
     padding: 5px;
     padding-top: 40px;
-    background-color:#F5F5F5;
+    background-color:#2E2E33;
+    border-radius: 10px;
     padding-bottom: 40px;
 }
 .search-heading,input,button{
     margin:5px;
     padding: 5px;
+    color: #ECECEC;
+ 
 }
-.data{
-    border: 2px solid black;
-    margin: 20px;
-    z-index: 2;
-    width: 100%;
-    max-width: 500px;
-    padding: 5px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #F5F5F5 !important;
-    /* background-color: red; */
-    position: relative;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15)
-
-
+input{
+    background-color: #5D6D7E;
+    font-size: 1rem;
+    border-radius: 6px;
 }
-.data.icon {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 10px auto;
-    object-fit: contain;
+input::placeholder{
+    color: #ECECEC;
+}
+.btn{
+    background-color: #5D6D7E;
+    color: #ECECEC;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background-color: #728A9A;
   }
   
+.btn:active {
+    background-color: #4C5A66;
+  }
+.data{
+    border: 2px solid     #5D6D7E
+    ;
+    margin: 20px;
+    z-index: 2;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    background: rgba(26, 26, 29, 0.85)!important;
+    backdrop-filter: blur(6px); 
+    box-shadow: 6px 6px 12px #1a1a1d, -6px -6px 12px #2e2e33;
+    position: relative;
+    color: #D6D4E0;
+
+
+}
+.temp{
+    font-size: 2rem;
+    color: #F0E6D2;
+    padding: 10px;
+}
+.detail{
+    font-size: 1.2rem;
+    color: #A0A0A0;
+    padding: 10px;
+
+}
+.city-name{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #D6D4E0;
+    padding: 10px;
+
+}
+.visibility{
+    font-size: 1.3rem;
+    color: #A0A0A0;
+    padding: 10px; 
+}
+.humidity{
+    font-size: 1.3rem;
+    color: #A0A0A0;
+    padding: 10px; 
+}
+.data.icon {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 5px auto;
+    object-fit: contain;
+    fill: #ECECEC;
+    filter: drop-shadow(0 0 6px rgba(240, 230, 210, 0.7));
+  }
+  .icon-wrapper {
+    background-color: rgba(0, 0, 0, 0.2); /* translucent glow */
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-flex;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
